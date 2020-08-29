@@ -29,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 final EditText etMilesToKm = findViewById(R.id.etMilesToKm);
                 final EditText etKmToMiles = findViewById(R.id.etKmToMiles);
 
+                double vMiles = Double.valueOf(etKmToMiles.getText().toString());
+
                 //convert the vlues in double from the string inputs
-                double vMiles = Double.parseDouble(etKmToMiles.getText().toString());
+
                 double vKm = vMiles / 0.62137;
 
                 //format the value in decimal
@@ -49,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
                 //do the converstion/
                 // Assgined task
+                double vMiles = Double.valueOf(etMilesToKm.getText().toString());
+                double vKilometers = vMiles / 0.621327;
+
+                DecimalFormat format = new DecimalFormat("##.##");
+                etKmToMiles.setText(format.format(vKilometers));
 
             }
         });
